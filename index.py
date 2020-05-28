@@ -37,7 +37,6 @@ df_estado=df.groupby('estado')['id_de_caso'].count().to_frame().rename({'id_de_c
 df_atencion=df.groupby(['atenci_n'])['id_de_caso'].count().to_frame().reset_index().rename({'id_de_caso':'Casos'}, axis='columns')
 
 ####Creacion layout
-app = dash.Dash(__name__)
 
 app.layout=html.Div(children=[html.H1('Covid-19 Colombia',style= {'text-align':'center'}),
                              
@@ -70,7 +69,6 @@ def update_graph(option_slctd):
     
     
     return info, fig
-
 
 
 
