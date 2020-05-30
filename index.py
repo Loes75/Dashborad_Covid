@@ -61,7 +61,7 @@ app.layout=html.Div(id='General', children=[
                                 html.Div(id='Izq',children=[dcc.Graph(id='graph2',figure=px.pie(df_estado,values='Cant',names=df_estado.index,width=600,height=500,title='Estado de los contagiados'))]),
                                 html.Div(id='Der',children=[dcc.Graph(id='graph3',figure=px.pie(df_atencion,values='Casos',names='atenci_n',hole=0.3,width=600,height=500,title='Atencion de los contagiados'))])
                                 ]),
-                        html.Iframe(id='map',srcDoc=open('mapa_casos.html','r').read(),width='100%',height='500',)
+                        html.Iframe(id='map',srcDoc=open('mapa_casos.html').read(),width='100%',height='500')
                         
                         
                             
@@ -69,7 +69,7 @@ app.layout=html.Div(id='General', children=[
     ]
    )
 
-                              
+                           
 
 ####Llamada a la función de selección 
 @app.callback([Output(component_id='informacion',component_property='children'),
