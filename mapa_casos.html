@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<head>    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.6.0/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://rawcdn.githack.com/python-visualization/folium/master/folium/templates/leaflet.awesome.rotate.css"/>
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_8e2032267d694feabe5d1270706ddeae {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+            </style>
+        
+</head>
+<body>    
+    
+            <div class="folium-map" id="map_8e2032267d694feabe5d1270706ddeae" ></div>
+        
+</body>
+<script>    
+    
+            var map_8e2032267d694feabe5d1270706ddeae = L.map(
+                "map_8e2032267d694feabe5d1270706ddeae",
+                {
+                    center: [4.5709, -74.2973],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 5,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_862c4822362b4cfea2923c9f6609f85e = L.tileLayer(
+                "https://stamen-tiles-{s}.a.ssl.fastly.net/terrain/{z}/{x}/{y}.jpg",
+                {"attribution": "Map tiles by \u003ca href=\"http://stamen.com\"\u003eStamen Design\u003c/a\u003e, under \u003ca href=\"http://creativecommons.org/licenses/by/3.0\"\u003eCC BY 3.0\u003c/a\u003e. Data by \u0026copy; \u003ca href=\"http://openstreetmap.org\"\u003eOpenStreetMap\u003c/a\u003e, under \u003ca href=\"http://creativecommons.org/licenses/by-sa/3.0\"\u003eCC BY SA\u003c/a\u003e.", "detectRetina": false, "maxNativeZoom": 18, "maxZoom": 18, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            ).addTo(map_8e2032267d694feabe5d1270706ddeae);
+        
+    
+            var circle_marker_08c423f39a2a4660b6ff42a81df0a7c2 = L.circleMarker(
+                [4.6097102, -74.081749],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 91.62, "stroke": true, "weight": 3}
+            ).addTo(map_8e2032267d694feabe5d1270706ddeae);
+        
+    
+        var popup_876cc3970c7545d7a524d719ee4d09c7 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_bba267c1d83945a18f77e278329fa0e8 = $(`<div id="html_bba267c1d83945a18f77e278329fa0e8" style="width: 100.0%; height: 100.0%;"><strong>State</strong>: Bogota<br><strong>Total_Cases</strong>: 9162<br></div>`)[0];
+            popup_876cc3970c7545d7a524d719ee4d09c7.setContent(html_bba267c1d83945a18f77e278329fa0e8);
+        
+
+        circle_marker_08c423f39a2a4660b6ff42a81df0a7c2.bindPopup(popup_876cc3970c7545d7a524d719ee4d09c7)
+        ;
+
+        
+    
+    
+            var circle_marker_2c5d4524ef1247f3a073c908cf8ca499 = L.circleMarker(
+                [4.6097103, -74.081748],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 7.65, "stroke": true, "weight": 3}
+            ).addTo(map_8e2032267d694feabe5d1270706ddeae);
+        
+    
+        var popup_b5fa0206f2784e5c8252f69d722cdc4f = L.popup({"maxWidth": "100%"});
+
+        
+            var html_2f7120f416bb4d8588e87a71e997bcaf = $(`<div id="html_2f7120f416bb4d8588e87a71e997bcaf" style="width: 100.0%; height: 100.0%;"><strong>State</strong>: Cundinamarca<br><strong>Total_Cases</strong>: 765<br></div>`)[0];
+            popup_b5fa0206f2784e5c8252f69d722cdc4f.setContent(html_2f7120f416bb4d8588e87a71e997bcaf);
+        
+
+        circle_marker_2c5d4524ef1247f3a073c908cf8ca499.bindPopup(popup_b5fa0206f2784e5c8252f69d722cdc4f)
+        ;
+
+        
+    
+    
+            var circle_marker_bf5742c487f541c7834529ed9059cda4 = L.circleMarker(
+                [3.4372201000000002, -76.5224991],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 27.34, "stroke": true, "weight": 3}
+            ).addTo(map_8e2032267d694feabe5d1270706ddeae);
+        
+    
+        var popup_739c5e46f44843619f71e54cd412cd52 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_a91b9700e57c442b97e057c90fd802de = $(`<div id="html_a91b9700e57c442b97e057c90fd802de" style="width: 100.0%; height: 100.0%;"><strong>State</strong>: Valle_del_cauca<br><strong>Total_Cases</strong>: 2734<br></div>`)[0];
+            popup_739c5e46f44843619f71e54cd412cd52.setContent(html_a91b9700e57c442b97e057c90fd802de);
+        
+
+        circle_marker_bf5742c487f541c7834529ed9059cda4.bindPopup(popup_739c5e46f44843619f71e54cd412cd52)
+        ;
+
+        
+    
+    
+            var circle_marker_2aa6dfb6e02f42de8aac4c354a7f61ac = L.circleMarker(
+                [6.2518401, -75.563591],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10.24, "stroke": true, "weight": 3}
+            ).addTo(map_8e2032267d694feabe5d1270706ddeae);
+        
+    
+        var popup_b7f7644bbfaf4bb98518cd26c39f9188 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_fac26f4e7d3545a099950e8636e6c693 = $(`<div id="html_fac26f4e7d3545a099950e8636e6c693" style="width: 100.0%; height: 100.0%;"><strong>State</strong>: Antioquia<br><strong>Total_Cases</strong>: 1024<br></div>`)[0];
+            popup_b7f7644bbfaf4bb98518cd26c39f9188.setContent(html_fac26f4e7d3545a099950e8636e6c693);
+        
+
+        circle_marker_2aa6dfb6e02f42de8aac4c354a7f61ac.bindPopup(popup_b7f7644bbfaf4bb98518cd26c39f9188)
+        ;
+
+        
+    
+    
+            var circle_marker_c7c8a232e3744359a7095ffc34308a18 = L.circleMarker(
+                [10.968540199999998, -74.7813187],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 17.96, "stroke": true, "weight": 3}
+            ).addTo(map_8e2032267d694feabe5d1270706ddeae);
+        
+    
+        var popup_7b098c16387c49d8b8821ab7ff0fb595 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_6b7099a090a84f30bc1f9b87bf64cce3 = $(`<div id="html_6b7099a090a84f30bc1f9b87bf64cce3" style="width: 100.0%; height: 100.0%;"><strong>State</strong>: Barranquilla<br><strong>Total_Cases</strong>: 1796<br></div>`)[0];
+            popup_7b098c16387c49d8b8821ab7ff0fb595.setContent(html_6b7099a090a84f30bc1f9b87bf64cce3);
+        
+
+        circle_marker_c7c8a232e3744359a7095ffc34308a18.bindPopup(popup_7b098c16387c49d8b8821ab7ff0fb595)
+        ;
+
+        
+    
+    
+            var circle_marker_b731bcd2ceaa4f37a49bec4fe30705cf = L.circleMarker(
+                [10.9685403, -74.7813186],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 16.28, "stroke": true, "weight": 3}
+            ).addTo(map_8e2032267d694feabe5d1270706ddeae);
+        
+    
+        var popup_d16e7b78aa3d46858ecbceb5f17d282e = L.popup({"maxWidth": "100%"});
+
+        
+            var html_50a3b3a562db436d96b8666c204dd38b = $(`<div id="html_50a3b3a562db436d96b8666c204dd38b" style="width: 100.0%; height: 100.0%;"><strong>State</strong>: Atlantico<br><strong>Total_Cases</strong>: 1628<br></div>`)[0];
+            popup_d16e7b78aa3d46858ecbceb5f17d282e.setContent(html_50a3b3a562db436d96b8666c204dd38b);
+        
+
+        circle_marker_b731bcd2ceaa4f37a49bec4fe30705cf.bindPopup(popup_d16e7b78aa3d46858ecbceb5f17d282e)
+        ;
+
+        
+    
+    
+            var circle_marker_fe985fa73f984860a4ef2151bb20322a = L.circleMarker(
+                [10.399720199999999, -75.5144424],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 26.5, "stroke": true, "weight": 3}
+            ).addTo(map_8e2032267d694feabe5d1270706ddeae);
+        
+    
+        var popup_373c459d3cc74be9804c655b2208af69 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_b0536686fbf14f469717f83b1458c37b = $(`<div id="html_b0536686fbf14f469717f83b1458c37b" style="width: 100.0%; height: 100.0%;"><strong>State</strong>: Cartagena<br><strong>Total_Cases</strong>: 2650<br></div>`)[0];
+            popup_373c459d3cc74be9804c655b2208af69.setContent(html_b0536686fbf14f469717f83b1458c37b);
+        
+
+        circle_marker_fe985fa73f984860a4ef2151bb20322a.bindPopup(popup_373c459d3cc74be9804c655b2208af69)
+        ;
+
+        
+    
+    
+            var circle_marker_8ee992051d914bb6a3d2b31ea59eece8 = L.circleMarker(
+                [10.3997203, -75.5144425],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 1.95, "stroke": true, "weight": 3}
+            ).addTo(map_8e2032267d694feabe5d1270706ddeae);
+        
+    
+        var popup_273c6fb0b4c44323b0b9293e072d4581 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_04ee2abb6c4f4c058ef3ceac10590e77 = $(`<div id="html_04ee2abb6c4f4c058ef3ceac10590e77" style="width: 100.0%; height: 100.0%;"><strong>State</strong>: Bolivar<br><strong>Total_Cases</strong>: 195<br></div>`)[0];
+            popup_273c6fb0b4c44323b0b9293e072d4581.setContent(html_04ee2abb6c4f4c058ef3ceac10590e77);
+        
+
+        circle_marker_8ee992051d914bb6a3d2b31ea59eece8.bindPopup(popup_273c6fb0b4c44323b0b9293e072d4581)
+        ;
+
+        
+    
+    
+            var circle_marker_453478b54e2943568ce8a44959647ec3 = L.circleMarker(
+                [7.893909900000001, -72.5078201],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 1.28, "stroke": true, "weight": 3}
+            ).addTo(map_8e2032267d694feabe5d1270706ddeae);
+        
+    
+        var popup_a3dc2f1e812e4b10b7f7785555c8184b = L.popup({"maxWidth": "100%"});
+
+        
+            var html_9ce311a05a1642329c0a5f7a02c74232 = $(`<div id="html_9ce311a05a1642329c0a5f7a02c74232" style="width: 100.0%; height: 100.0%;"><strong>State</strong>: Norte_de_santander<br><strong>Total_Cases</strong>: 128<br></div>`)[0];
+            popup_a3dc2f1e812e4b10b7f7785555c8184b.setContent(html_9ce311a05a1642329c0a5f7a02c74232);
+        
+
+        circle_marker_453478b54e2943568ce8a44959647ec3.bindPopup(popup_a3dc2f1e812e4b10b7f7785555c8184b)
+        ;
+
+        
+    
+    
+            var circle_marker_a71b06c4305d4ddca0da65b09fc7be77 = L.circleMarker(
+                [7.1253901, -73.1197968],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 0.59, "stroke": true, "weight": 3}
+            ).addTo(map_8e2032267d694feabe5d1270706ddeae);
+        
+    
+        var popup_0f689a70d5944b6cb685f72ac9107f55 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_22f436aad84c43bfa2b3651512da6175 = $(`<div id="html_22f436aad84c43bfa2b3651512da6175" style="width: 100.0%; height: 100.0%;"><strong>State</strong>: Santander<br><strong>Total_Cases</strong>: 59<br></div>`)[0];
+            popup_0f689a70d5944b6cb685f72ac9107f55.setContent(html_22f436aad84c43bfa2b3651512da6175);
+        
+
+        circle_marker_a71b06c4305d4ddca0da65b09fc7be77.bindPopup(popup_0f689a70d5944b6cb685f72ac9107f55)
+        ;
+
+        
+    
+    
+            var circle_marker_9c169d803def4a55afaae88bc2246679 = L.circleMarker(
+                [4.8133302, -75.6961136],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2.5100000000000002, "stroke": true, "weight": 3}
+            ).addTo(map_8e2032267d694feabe5d1270706ddeae);
+        
+    
+        var popup_82f5469687894c11853b2e1e9d0138c1 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_2ddced2f90154214b4deeb38305dd725 = $(`<div id="html_2ddced2f90154214b4deeb38305dd725" style="width: 100.0%; height: 100.0%;"><strong>State</strong>: Risaralda<br><strong>Total_Cases</strong>: 251<br></div>`)[0];
+            popup_82f5469687894c11853b2e1e9d0138c1.setContent(html_2ddced2f90154214b4deeb38305dd725);
+        
+
+        circle_marker_9c169d803def4a55afaae88bc2246679.bindPopup(popup_82f5469687894c11853b2e1e9d0138c1)
+        ;
+
+        
+    
+    
+            var circle_marker_3b69ee536cd043d288aa6aa17697c8f4 = L.circleMarker(
+                [11.240790400000002, -74.1990433],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.1, "stroke": true, "weight": 3}
+            ).addTo(map_8e2032267d694feabe5d1270706ddeae);
+        
+    
+        var popup_919d53604601470283fb19a39d591da4 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_314942f6ee494d76a8612ec5644d2b86 = $(`<div id="html_314942f6ee494d76a8612ec5644d2b86" style="width: 100.0%; height: 100.0%;"><strong>State</strong>: Santa_marta<br><strong>Total_Cases</strong>: 310<br></div>`)[0];
+            popup_919d53604601470283fb19a39d591da4.setContent(html_314942f6ee494d76a8612ec5644d2b86);
+        
+
+        circle_marker_3b69ee536cd043d288aa6aa17697c8f4.bindPopup(popup_919d53604601470283fb19a39d591da4)
+        ;
+
+        
+    
+    
+            var circle_marker_6364cce2aa794f109f605c911b348849 = L.circleMarker(
+                [11.2407905, -74.1990434],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2.58, "stroke": true, "weight": 3}
+            ).addTo(map_8e2032267d694feabe5d1270706ddeae);
+        
+    
+        var popup_24a13e6bebe644ddbfbacb69a68df866 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_322418192686481285b4a4e3db06a869 = $(`<div id="html_322418192686481285b4a4e3db06a869" style="width: 100.0%; height: 100.0%;"><strong>State</strong>: Magdalena<br><strong>Total_Cases</strong>: 258<br></div>`)[0];
+            popup_24a13e6bebe644ddbfbacb69a68df866.setContent(html_322418192686481285b4a4e3db06a869);
+        
+
+        circle_marker_6364cce2aa794f109f605c911b348849.bindPopup(popup_24a13e6bebe644ddbfbacb69a68df866)
+        ;
+
+        
+    
+    
+            var circle_marker_7718cdfe580540f4bf200ddc1bec4643 = L.circleMarker(
+                [4.43889, -75.2322235],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2.47, "stroke": true, "weight": 3}
+            ).addTo(map_8e2032267d694feabe5d1270706ddeae);
+        
+    
+        var popup_d5ada8b8a9bc4296a9140432f0099814 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_8af0f26a8f4a47ae93be57967937b410 = $(`<div id="html_8af0f26a8f4a47ae93be57967937b410" style="width: 100.0%; height: 100.0%;"><strong>State</strong>: Tolima<br><strong>Total_Cases</strong>: 247<br></div>`)[0];
+            popup_d5ada8b8a9bc4296a9140432f0099814.setContent(html_8af0f26a8f4a47ae93be57967937b410);
+        
+
+        circle_marker_7718cdfe580540f4bf200ddc1bec4643.bindPopup(popup_d5ada8b8a9bc4296a9140432f0099814)
+        ;
+
+        
+    
+    
+            var circle_marker_6f108940a8694440a93e74447383d91e = L.circleMarker(
+                [1.2136101000000001, -77.2811127],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9.46, "stroke": true, "weight": 3}
+            ).addTo(map_8e2032267d694feabe5d1270706ddeae);
+        
+    
+        var popup_dc2b3a92c36442e59d2562962d21cb63 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_63c2d2eb6fd44b3eb573114a4acf5ed1 = $(`<div id="html_63c2d2eb6fd44b3eb573114a4acf5ed1" style="width: 100.0%; height: 100.0%;"><strong>State</strong>: Nariño<br><strong>Total_Cases</strong>: 946<br></div>`)[0];
+            popup_dc2b3a92c36442e59d2562962d21cb63.setContent(html_63c2d2eb6fd44b3eb573114a4acf5ed1);
+        
+
+        circle_marker_6f108940a8694440a93e74447383d91e.bindPopup(popup_dc2b3a92c36442e59d2562962d21cb63)
+        ;
+
+        
+    
+    
+            var circle_marker_c1331cb4c0fc4615ab118c4b02ec509c = L.circleMarker(
+                [5.0688901, -75.5173798],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 1.35, "stroke": true, "weight": 3}
+            ).addTo(map_8e2032267d694feabe5d1270706ddeae);
+        
+    
+        var popup_5d579e1d9214461c9e961dbd2376d7fe = L.popup({"maxWidth": "100%"});
+
+        
+            var html_edf96614009840c7991f3a4db312e003 = $(`<div id="html_edf96614009840c7991f3a4db312e003" style="width: 100.0%; height: 100.0%;"><strong>State</strong>: Caldas<br><strong>Total_Cases</strong>: 135<br></div>`)[0];
+            popup_5d579e1d9214461c9e961dbd2376d7fe.setContent(html_edf96614009840c7991f3a4db312e003);
+        
+
+        circle_marker_c1331cb4c0fc4615ab118c4b02ec509c.bindPopup(popup_5d579e1d9214461c9e961dbd2376d7fe)
+        ;
+
+        
+    
+    
+            var circle_marker_d8b781368c104c35a8838f05afffc9e5 = L.circleMarker(
+                [2.9273, -75.2818909],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2.47, "stroke": true, "weight": 3}
+            ).addTo(map_8e2032267d694feabe5d1270706ddeae);
+        
+    
+        var popup_97c3604726814a9b927327bff24e00ff = L.popup({"maxWidth": "100%"});
+
+        
+            var html_0f3f2006604d42b99fd51dc39b0d3d28 = $(`<div id="html_0f3f2006604d42b99fd51dc39b0d3d28" style="width: 100.0%; height: 100.0%;"><strong>State</strong>: Huila<br><strong>Total_Cases</strong>: 247<br></div>`)[0];
+            popup_97c3604726814a9b927327bff24e00ff.setContent(html_0f3f2006604d42b99fd51dc39b0d3d28);
+        
+
+        circle_marker_d8b781368c104c35a8838f05afffc9e5.bindPopup(popup_97c3604726814a9b927327bff24e00ff)
+        ;
+
+        
+    
+    
+            var circle_marker_0b1e75b7d9964d03855b5aed1b3c2387 = L.circleMarker(
+                [4.1420002, -73.6266403],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9.74, "stroke": true, "weight": 3}
+            ).addTo(map_8e2032267d694feabe5d1270706ddeae);
+        
+    
+        var popup_76306c32395140d4b35dae898b7416eb = L.popup({"maxWidth": "100%"});
+
+        
+            var html_4dedc62f32c44b88b65d1ed8c08e9732 = $(`<div id="html_4dedc62f32c44b88b65d1ed8c08e9732" style="width: 100.0%; height: 100.0%;"><strong>State</strong>: Meta<br><strong>Total_Cases</strong>: 974<br></div>`)[0];
+            popup_76306c32395140d4b35dae898b7416eb.setContent(html_4dedc62f32c44b88b65d1ed8c08e9732);
+        
+
+        circle_marker_0b1e75b7d9964d03855b5aed1b3c2387.bindPopup(popup_76306c32395140d4b35dae898b7416eb)
+        ;
+
+        
+    
+    
+            var circle_marker_caa60f0af9fe4df7a23ecc1c1db594e6 = L.circleMarker(
+                [4.5338898, -75.6811066],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 1.07, "stroke": true, "weight": 3}
+            ).addTo(map_8e2032267d694feabe5d1270706ddeae);
+        
+    
+        var popup_1ec7ca9911be45268ac61b9a8b8ba49f = L.popup({"maxWidth": "100%"});
+
+        
+            var html_1ea84910d5754c53a862037831c4a58b = $(`<div id="html_1ea84910d5754c53a862037831c4a58b" style="width: 100.0%; height: 100.0%;"><strong>State</strong>: Quindio<br><strong>Total_Cases</strong>: 107<br></div>`)[0];
+            popup_1ec7ca9911be45268ac61b9a8b8ba49f.setContent(html_1ea84910d5754c53a862037831c4a58b);
+        
+
+        circle_marker_caa60f0af9fe4df7a23ecc1c1db594e6.bindPopup(popup_1ec7ca9911be45268ac61b9a8b8ba49f)
+        ;
+
+        
+    
+    
+            var circle_marker_91dabd311827489a9c131395ada24682 = L.circleMarker(
+                [10.4631395, -73.2532196],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 1.6300000000000001, "stroke": true, "weight": 3}
+            ).addTo(map_8e2032267d694feabe5d1270706ddeae);
+        
+    
+        var popup_08d4147ed08c4a9a967fdfa8a078df23 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_135eb829f04f4be1b1c6aec5948c177f = $(`<div id="html_135eb829f04f4be1b1c6aec5948c177f" style="width: 100.0%; height: 100.0%;"><strong>State</strong>: Cesar<br><strong>Total_Cases</strong>: 163<br></div>`)[0];
+            popup_08d4147ed08c4a9a967fdfa8a078df23.setContent(html_135eb829f04f4be1b1c6aec5948c177f);
+        
+
+        circle_marker_91dabd311827489a9c131395ada24682.bindPopup(popup_08d4147ed08c4a9a967fdfa8a078df23)
+        ;
+
+        
+    
+    
+            var circle_marker_a8ccd552c37b46cf8a8bbaef4ea175da = L.circleMarker(
+                [8.7479801, -75.8814316],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 1.1, "stroke": true, "weight": 3}
+            ).addTo(map_8e2032267d694feabe5d1270706ddeae);
+        
+    
+        var popup_5e1832ad89764f239c61cbf6a49dffa0 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_7ba2cddaaf4b4c3cb95416291acbb61d = $(`<div id="html_7ba2cddaaf4b4c3cb95416291acbb61d" style="width: 100.0%; height: 100.0%;"><strong>State</strong>: Cordoba<br><strong>Total_Cases</strong>: 110<br></div>`)[0];
+            popup_5e1832ad89764f239c61cbf6a49dffa0.setContent(html_7ba2cddaaf4b4c3cb95416291acbb61d);
+        
+
+        circle_marker_a8ccd552c37b46cf8a8bbaef4ea175da.bindPopup(popup_5e1832ad89764f239c61cbf6a49dffa0)
+        ;
+
+        
+    
+    
+            var circle_marker_f386279f97aa4f7dad840c07ad9b2898 = L.circleMarker(
+                [2.43823, -76.6131592],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 0.91, "stroke": true, "weight": 3}
+            ).addTo(map_8e2032267d694feabe5d1270706ddeae);
+        
+    
+        var popup_3bf3951d39c9452e84bcb494b2115300 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_c2ccabca655d4fc6969a1f47ba647304 = $(`<div id="html_c2ccabca655d4fc6969a1f47ba647304" style="width: 100.0%; height: 100.0%;"><strong>State</strong>: Cauca<br><strong>Total_Cases</strong>: 91<br></div>`)[0];
+            popup_3bf3951d39c9452e84bcb494b2115300.setContent(html_c2ccabca655d4fc6969a1f47ba647304);
+        
+
+        circle_marker_f386279f97aa4f7dad840c07ad9b2898.bindPopup(popup_3bf3951d39c9452e84bcb494b2115300)
+        ;
+
+        
+    
+    
+            var circle_marker_aac22b53e6904d4a9cb10a58cf5a5f16 = L.circleMarker(
+                [12.584719699999999, -81.7005615],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 0.17, "stroke": true, "weight": 3}
+            ).addTo(map_8e2032267d694feabe5d1270706ddeae);
+        
+    
+        var popup_6fa3fff47f324389aac4428981d433a1 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_9ceeb19d46a54fdfb97bedbaf1113060 = $(`<div id="html_9ceeb19d46a54fdfb97bedbaf1113060" style="width: 100.0%; height: 100.0%;"><strong>State</strong>: San_andres<br><strong>Total_Cases</strong>: 17<br></div>`)[0];
+            popup_6fa3fff47f324389aac4428981d433a1.setContent(html_9ceeb19d46a54fdfb97bedbaf1113060);
+        
+
+        circle_marker_aac22b53e6904d4a9cb10a58cf5a5f16.bindPopup(popup_6fa3fff47f324389aac4428981d433a1)
+        ;
+
+        
+    
+    
+            var circle_marker_2f035f36b9ab49a59a43ba51008c02a2 = L.circleMarker(
+                [5.33775, -72.3958588],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 0.34, "stroke": true, "weight": 3}
+            ).addTo(map_8e2032267d694feabe5d1270706ddeae);
+        
+    
+        var popup_f2a5c6568a9042588ec610eed18604f4 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_73204cc5c8fe4670880536eb62d2734d = $(`<div id="html_73204cc5c8fe4670880536eb62d2734d" style="width: 100.0%; height: 100.0%;"><strong>State</strong>: Casanare<br><strong>Total_Cases</strong>: 34<br></div>`)[0];
+            popup_f2a5c6568a9042588ec610eed18604f4.setContent(html_73204cc5c8fe4670880536eb62d2734d);
+        
+
+        circle_marker_2f035f36b9ab49a59a43ba51008c02a2.bindPopup(popup_f2a5c6568a9042588ec610eed18604f4)
+        ;
+
+        
+    
+    
+            var circle_marker_b24a6a1c0cbc4450afa10773a2f26d77 = L.circleMarker(
+                [5.535280200000001, -73.3677826],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 1.9000000000000001, "stroke": true, "weight": 3}
+            ).addTo(map_8e2032267d694feabe5d1270706ddeae);
+        
+    
+        var popup_a37f38e60b6e45c6b9fe6091c440a85d = L.popup({"maxWidth": "100%"});
+
+        
+            var html_8180cf2d872b4c68891a95ff56ee8760 = $(`<div id="html_8180cf2d872b4c68891a95ff56ee8760" style="width: 100.0%; height: 100.0%;"><strong>State</strong>: Boyaca<br><strong>Total_Cases</strong>: 190<br></div>`)[0];
+            popup_a37f38e60b6e45c6b9fe6091c440a85d.setContent(html_8180cf2d872b4c68891a95ff56ee8760);
+        
+
+        circle_marker_b24a6a1c0cbc4450afa10773a2f26d77.bindPopup(popup_a37f38e60b6e45c6b9fe6091c440a85d)
+        ;
+
+        
+    
+    
+            var circle_marker_855e96cef5624e4491640baf2a70d519 = L.circleMarker(
+                [9.3047199, -75.3977814],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 0.15, "stroke": true, "weight": 3}
+            ).addTo(map_8e2032267d694feabe5d1270706ddeae);
+        
+    
+        var popup_c12e24cd4e3e462ab7c25e7ba9d47f31 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_784c4960f0284dd1b0252a6824d75261 = $(`<div id="html_784c4960f0284dd1b0252a6824d75261" style="width: 100.0%; height: 100.0%;"><strong>State</strong>: Sucre<br><strong>Total_Cases</strong>: 15<br></div>`)[0];
+            popup_c12e24cd4e3e462ab7c25e7ba9d47f31.setContent(html_784c4960f0284dd1b0252a6824d75261);
+        
+
+        circle_marker_855e96cef5624e4491640baf2a70d519.bindPopup(popup_c12e24cd4e3e462ab7c25e7ba9d47f31)
+        ;
+
+        
+    
+    
+            var circle_marker_b49a7da60a3a4bdf8991da356ddfdfdc = L.circleMarker(
+                [11.5444403, -72.9072189],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 0.5700000000000001, "stroke": true, "weight": 3}
+            ).addTo(map_8e2032267d694feabe5d1270706ddeae);
+        
+    
+        var popup_c50c166ead5b41df93d4a0c43c990857 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_8dd9aa01400046398182234424e588a6 = $(`<div id="html_8dd9aa01400046398182234424e588a6" style="width: 100.0%; height: 100.0%;"><strong>State</strong>: La guajira<br><strong>Total_Cases</strong>: 57<br></div>`)[0];
+            popup_c50c166ead5b41df93d4a0c43c990857.setContent(html_8dd9aa01400046398182234424e588a6);
+        
+
+        circle_marker_b49a7da60a3a4bdf8991da356ddfdfdc.bindPopup(popup_c50c166ead5b41df93d4a0c43c990857)
+        ;
+
+        
+    
+    
+            var circle_marker_48f4f97da22e437a907db3b804100bf7 = L.circleMarker(
+                [3.5833299, -77.0],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3.49, "stroke": true, "weight": 3}
+            ).addTo(map_8e2032267d694feabe5d1270706ddeae);
+        
+    
+        var popup_ba4ebeb0aa4b433a9fadb6c644634333 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_1f19706c52834657b6fe5049dfa8072c = $(`<div id="html_1f19706c52834657b6fe5049dfa8072c" style="width: 100.0%; height: 100.0%;"><strong>State</strong>: Buenaventura<br><strong>Total_Cases</strong>: 349<br></div>`)[0];
+            popup_ba4ebeb0aa4b433a9fadb6c644634333.setContent(html_1f19706c52834657b6fe5049dfa8072c);
+        
+
+        circle_marker_48f4f97da22e437a907db3b804100bf7.bindPopup(popup_ba4ebeb0aa4b433a9fadb6c644634333)
+        ;
+
+        
+    
+    
+            var circle_marker_4427777819424f25bd99b6bc3edcde30 = L.circleMarker(
+                [5.6918802, -76.6583481],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 1.96, "stroke": true, "weight": 3}
+            ).addTo(map_8e2032267d694feabe5d1270706ddeae);
+        
+    
+        var popup_252d4d7cc754455b8ebe1568af7a6cca = L.popup({"maxWidth": "100%"});
+
+        
+            var html_dba0e9b19953406784df154f50bb3c9f = $(`<div id="html_dba0e9b19953406784df154f50bb3c9f" style="width: 100.0%; height: 100.0%;"><strong>State</strong>: Choco<br><strong>Total_Cases</strong>: 196<br></div>`)[0];
+            popup_252d4d7cc754455b8ebe1568af7a6cca.setContent(html_dba0e9b19953406784df154f50bb3c9f);
+        
+
+        circle_marker_4427777819424f25bd99b6bc3edcde30.bindPopup(popup_252d4d7cc754455b8ebe1568af7a6cca)
+        ;
+
+        
+    
+    
+            var circle_marker_2bf00a9b6ab943da9766c379b76a4246 = L.circleMarker(
+                [-4.2152801, -69.9405594],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 17.990000000000002, "stroke": true, "weight": 3}
+            ).addTo(map_8e2032267d694feabe5d1270706ddeae);
+        
+    
+        var popup_bc4b01e7d4284f64b8304b54fcd72a78 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_2b4c969e9f7a408a8ab13961684a5911 = $(`<div id="html_2b4c969e9f7a408a8ab13961684a5911" style="width: 100.0%; height: 100.0%;"><strong>State</strong>: Amazonas<br><strong>Total_Cases</strong>: 1799<br></div>`)[0];
+            popup_bc4b01e7d4284f64b8304b54fcd72a78.setContent(html_2b4c969e9f7a408a8ab13961684a5911);
+        
+
+        circle_marker_2bf00a9b6ab943da9766c379b76a4246.bindPopup(popup_bc4b01e7d4284f64b8304b54fcd72a78)
+        ;
+
+        
+    
+    
+            var circle_marker_41ca5ebad6e04e2abea447c4df0366eb = L.circleMarker(
+                [1.61438, -75.6062317],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 0.24, "stroke": true, "weight": 3}
+            ).addTo(map_8e2032267d694feabe5d1270706ddeae);
+        
+    
+        var popup_96ecd4856d2d4ad988127d6bf9899cc0 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_86233ab8adf343108e9675dbae6e4180 = $(`<div id="html_86233ab8adf343108e9675dbae6e4180" style="width: 100.0%; height: 100.0%;"><strong>State</strong>: Caqueta<br><strong>Total_Cases</strong>: 24<br></div>`)[0];
+            popup_96ecd4856d2d4ad988127d6bf9899cc0.setContent(html_86233ab8adf343108e9675dbae6e4180);
+        
+
+        circle_marker_41ca5ebad6e04e2abea447c4df0366eb.bindPopup(popup_96ecd4856d2d4ad988127d6bf9899cc0)
+        ;
+
+        
+    
+    
+            var circle_marker_78777226348c414da16ffcf3e4bdd32c = L.circleMarker(
+                [0.43595059999999997, -75.5276699],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 0.08, "stroke": true, "weight": 3}
+            ).addTo(map_8e2032267d694feabe5d1270706ddeae);
+        
+    
+        var popup_4bc7284ca1a0490daf7d76d5b67124b5 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_a93003d070444b57b8d8fc69d0265149 = $(`<div id="html_a93003d070444b57b8d8fc69d0265149" style="width: 100.0%; height: 100.0%;"><strong>State</strong>: Putumayo<br><strong>Total_Cases</strong>: 8<br></div>`)[0];
+            popup_4bc7284ca1a0490daf7d76d5b67124b5.setContent(html_a93003d070444b57b8d8fc69d0265149);
+        
+
+        circle_marker_78777226348c414da16ffcf3e4bdd32c.bindPopup(popup_4bc7284ca1a0490daf7d76d5b67124b5)
+        ;
+
+        
+    
+    
+            var circle_marker_e413641a1123461a85c443dd12f76643 = L.circleMarker(
+                [7.0847101, -70.759079],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 0.01, "stroke": true, "weight": 3}
+            ).addTo(map_8e2032267d694feabe5d1270706ddeae);
+        
+    
+        var popup_4bc738c2570640aeaf3b53fbc12c2085 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_18d6a230c8df41aea2529cb24d239049 = $(`<div id="html_18d6a230c8df41aea2529cb24d239049" style="width: 100.0%; height: 100.0%;"><strong>State</strong>: Arauca<br><strong>Total_Cases</strong>: 1<br></div>`)[0];
+            popup_4bc738c2570640aeaf3b53fbc12c2085.setContent(html_18d6a230c8df41aea2529cb24d239049);
+        
+
+        circle_marker_e413641a1123461a85c443dd12f76643.bindPopup(popup_4bc738c2570640aeaf3b53fbc12c2085)
+        ;
+
+        
+    
+    
+            var circle_marker_5dc6577673454a0b9c3b7f85959852ff = L.circleMarker(
+                [0.8553561, -70.8119953],
+                {"bubblingMouseEvents": true, "color": "red", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.3, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 0.11, "stroke": true, "weight": 3}
+            ).addTo(map_8e2032267d694feabe5d1270706ddeae);
+        
+    
+        var popup_9648efff5dea4c9e9834dba638dfe466 = L.popup({"maxWidth": "100%"});
+
+        
+            var html_f0946fb5d7d34b30b2c6b9536b89707a = $(`<div id="html_f0946fb5d7d34b30b2c6b9536b89707a" style="width: 100.0%; height: 100.0%;"><strong>State</strong>: Vaupes<br><strong>Total_Cases</strong>: 11<br></div>`)[0];
+            popup_9648efff5dea4c9e9834dba638dfe466.setContent(html_f0946fb5d7d34b30b2c6b9536b89707a);
+        
+
+        circle_marker_5dc6577673454a0b9c3b7f85959852ff.bindPopup(popup_9648efff5dea4c9e9834dba638dfe466)
+        ;
+
+        
+    
+</script>
