@@ -4,6 +4,7 @@ import folium
 import pandas as pd 
 from sodapy import Socrata
 
+url="https://github.com/Loes75/Covid19_Col_Web/blob/master/coordenadas_col.csv"
 client = Socrata("www.datos.gov.co", None)   
 results = client.get("gt2j-8ykr", limit=1000000)  #Limit of 1000000 rows
 df = pd.DataFrame.from_records(results)
@@ -11,8 +12,7 @@ df = pd.DataFrame.from_records(results)
 df['fecha_diagnostico']=pd.to_datetime(df['fecha_diagnostico'],errors='coerce')
 
 ##Lectura coordenadas capitales departamentos
-Col_coordinates=pd.read_csv("coordenadas_col.csv",header=None,names=['departamento','Latitud','Longitud']) 
-
+Col_coordinates=pd.read_csv(url,header=None,names=['departamento','Latitud','Longitud'],sep=",") 
 
 ########Renombrar departamentos igual a como estan en coordenadas
 df['departamento']=df['departamento'].replace({'Bogotá D.C.':'Bogota','Valle del Cauca':'Valle_del_Cauca','Cartagena D.T. y C.':'Cartagena',
