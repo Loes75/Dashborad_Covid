@@ -15,7 +15,7 @@ import plotly.express as px
 from map_graph import results
 
 
-from app import app
+from app import app,server
 
 
 #Lectura de los datos
