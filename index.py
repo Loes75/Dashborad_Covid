@@ -43,32 +43,74 @@ df_atencion=df.groupby(['atenci_n'])['id_de_caso'].count().to_frame().reset_inde
 
 
 ####Creacion layout
+colors = {
+    'background': '#FFFFFF',
+    'text': '#465442',
+    'text2': '#B44646'
+}
+
+style1={
+            'textAlign': 'center',
+            'color': colors['text'],
+            'fontWeight':'bold'}
+style2={
+            'textAlign': 'center',
+            'color': colors['text2'],
+            'fontWeight':'bold'}
 
 
-app.layout=html.Div(id='General', children=[
-                       
-                        
-                        html.Div(id='top',children=html.H1('Covid-19 Colombia',style= {'textAlign':'center', 'font-weight': 'bold'})),
-                        dcc.Dropdown(id='y',options=col_options,multi=False,value='Casos'),
-                        
-                        html.Div(id='informacion'),
-                        html.Br(),
-                        dcc.Graph(id='graph',figure={}),
-                        
-                        
-                        html.Div(id='Mayor',children=[
+
+app.layout=html.Div(id='General', style={'backgroundColor': colors['background']},children=[
+        html.H1(
+        children='Covid-19 en Colombia',
+        style=style1
+        ),
+        html.Div(html.H2(id='informacion'),style=style1),
+        html.Div(html.H4("Seleccione Casos si desea ver el número diario de casos y Acum si desea ver el número de casos acumulados "),style=style2),
+        dcc.Dropdown(id='y',style={'height': '40px', 'width': '100%', 'font-size': "25px",'color':'#465442'},options=col_options,multi=False,value='Casos'),
+        dcc.Graph(id='graph',figure={'data':[],
+            'layout': {
+                'plot_bgcolor': colors['background'],
+                'paper_bgcolor': colors['background'],
+                'font': {
+                    'color': colors['text']}}}),
+        html.Div(html.H3("A continuación se muestra el estado de los pacientes "),style=style1),
+        html.Div(id='Mayor',children=[
                                
-                                html.Div(id='Izq',children=[dcc.Graph(id='graph2',figure=px.pie(df_estado,values='Cant',names=df_estado.index,width=600,height=500,title='Estado de los contagiados'))]),
-                                html.Div(id='Der',children=[dcc.Graph(id='graph3',figure=px.pie(df_atencion,values='Casos',names='atenci_n',hole=0.3,width=600,height=500,title='Atencion de los contagiados'))])
-                                ]),
-                        html.Iframe(id='map',srcDoc=open('mapa_casos.html').read(),width='100%',height='500')
-                        
-                        
-                            
-                           
-    ]
-   )
+                                html.Div(id='Izq',children=[dcc.Graph(id='graph2',figure=px.pie(df_estado,values='Cant',names=df_estado.index,hole=0.3,title='Estado de los contagiados'),className="six columns")]),
+                                html.Div(id='Der',children=[dcc.Graph(id='graph3',figure=px.pie(df_atencion,values='Casos',names='atenci_n',hole=0.3,title='Atencion de los contagiados'),className="six columns")])
+                               ],className="row"),
+        html.Div(html.H3("A continuación se muestra cuantos cuantos casos hay en cada departamento"),style=style1),
+        html.Div(id='mapa',children=[html.Iframe(id='map',srcDoc=open('mapa_casos.html').read(),width='70%',height='500px')])
+        
+        
+        
+    
+        
+    
+    
+    
+    
+    
+    
+    ])
+    
+   
 
+ # html.Div(id='top',children=html.H1('Covid-19 Colombia',style= {'textAlign':'center', 'fontWeight': 'bold'})),
+ #                        dcc.Dropdown(id='y',options=col_options,multi=False,value='Casos'),
+                        
+ #                        html.Div(html.H3(id='informacion')),
+ #                        html.Br(),
+ #                        dcc.Graph(id='graph',figure={}),
+                        
+                        
+ #                        html.Div(id='Mayor',children=[
+                               
+ #                                html.Div(id='Izq',children=[dcc.Graph(id='graph2',figure=px.pie(df_estado,values='Cant',names=df_estado.index,hole=0.3,title='Estado de los contagiados'))]),
+ #                                html.Div(id='Der',children=[dcc.Graph(id='graph3',figure=px.pie(df_atencion,values='Casos',names='atenci_n',hole=0.3,title='Atencion de los contagiados'))])
+ #                                ]),
+ #                        html.Iframe(id='map',srcDoc=open('mapa_casos.html').read(),width='100%',height='500')
                            
 
 ####Llamada a la función de selección 
@@ -82,6 +124,8 @@ def update_graph(option_slctd):
     info = "A continuación se muestran varios gráficos sobre los casos de Covid en Colombia"
     
     fig=px.bar(Cases, x='fecha_diagnostico', y=option_slctd)
+    
+    
     
     
     
