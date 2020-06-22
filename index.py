@@ -12,6 +12,7 @@ import dash_html_components as html
 from dash.dependencies import Input, Output
 import pandas as pd 
 import plotly.express as px
+from plotly.subplots import make_subplots
 from map_graph import results
 
 
@@ -36,10 +37,23 @@ df_estado=df.groupby('estado')['id_de_caso'].count().to_frame().rename({'id_de_c
 ####Agrupacioón de la atención dada a los contagiados
 df_atencion=df.groupby(['atenci_n'])['id_de_caso'].count().to_frame().reset_index().rename({'id_de_caso':'Casos'}, axis='columns')
 
+####### TOP 15 Ciudades (casos, recuperados, muertes)
 
 
 
+top_15=df.groupby('ciudad_de_ubicaci_n')['id_de_caso'].count().sort_values().tail(15).to_frame().reset_index().rename({'id_de_caso':'Casos'},axis='columns')
+figure1=px.bar(top_15,x='Casos',y='ciudad_de_ubicaci_n',orientation='h',color_discrete_sequence =['#f38181'])
+top15_m=df.loc[df['fecha_de_muerte'].notnull()].groupby('ciudad_de_ubicaci_n')['id_de_caso'].count().sort_values().tail(15).to_frame().reset_index().rename({'id_de_caso':'Muertes'}, axis='columns')
+figure2=px.bar(top15_m,x='Muertes',y='ciudad_de_ubicaci_n',orientation='h')
+top15_r=df.loc[df['fecha_recuperado'].notnull()].groupby('ciudad_de_ubicaci_n')['id_de_caso'].count().sort_values().tail(15).to_frame().reset_index().rename({'id_de_caso':'Recuperados'}, axis='columns')
+figure3=px.bar(top15_r,x='Recuperados',y='ciudad_de_ubicaci_n',orientation='h',color_discrete_sequence = ['#a3de83'])
+fig4=make_subplots(rows=1, cols=3, shared_xaxes=False, horizontal_spacing=0.1,
+                  subplot_titles=('Infectados','Muertos',
+                  'Recuperados'))
 
+fig4.add_trace(figure1['data'][0], row=1, col=1)
+fig4.add_trace(figure2['data'][0], row=1, col=2)
+fig4.add_trace(figure3['data'][0], row=1, col=3)
 
 
 ####Creacion layout
@@ -67,7 +81,7 @@ app.layout=html.Div(id='General', style={'backgroundColor': colors['background']
         ),
         html.Div(html.H2(id='informacion'),style=style1),
         html.Div(html.H4("Seleccione Casos si desea ver el número diario de casos y Acum si desea ver el número de casos acumulados "),style=style2),
-        dcc.Dropdown(id='y',style={'height': '40px', 'width': '100%', 'font-size': "25px",'color':'#465442'},options=col_options,multi=False,value='Casos'),
+        dcc.Dropdown(id='y',style={'height': '40px', 'width': '100%', 'fontSize': "25px",'color':'#465442'},options=col_options,multi=False,value='Casos'),
         dcc.Graph(id='graph',figure={'data':[],
             'layout': {
                 'plot_bgcolor': colors['background'],
@@ -80,7 +94,9 @@ app.layout=html.Div(id='General', style={'backgroundColor': colors['background']
                                 html.Div(id='Izq',children=[dcc.Graph(id='graph2',figure=px.pie(df_estado,values='Cant',names=df_estado.index,hole=0.3,title='Estado de los contagiados'),className="six columns")]),
                                 html.Div(id='Der',children=[dcc.Graph(id='graph3',figure=px.pie(df_atencion,values='Casos',names='atenci_n',hole=0.3,title='Atencion de los contagiados'),className="six columns")])
                                ],className="row"),
-        html.Div(html.H3("A continuación se muestra cuantos cuantos casos hay en cada departamento"),style=style1),
+        html.Div(html.H3("A continuación se muetran las ciudades con más infectados, recuperados y muertes"),style=style1),
+        html.Div(id='Top',children=[dcc.Graph(id='top_graph',figure= fig4)]),
+        html.Div(html.H3("A continuación se muestra un mapa con información sobre cuantos cuantos casos hay en cada departamento"),style=style1),
         html.Div(id='mapa',children=[html.Iframe(id='map',srcDoc=open('mapa_casos.html').read(),width='70%',height='500px')])
         
         
