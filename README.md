@@ -1,2 +1,5 @@
 # Covid19_Col_Web
-Visualización Web de gráficos sobre Covid-19 en Colombia, realizado con Dash y publicado por medio de Heroku.
+
+Dashboard sobre casos de Covid-19 en Colombia, la información se obtiene mediante la API de Datos de Libre Acceso de Socrata (SODA). Se utilizo el framework Dash de python.
+https://app-covid-col.herokuapp.com/
+
