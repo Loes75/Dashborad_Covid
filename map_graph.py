@@ -4,9 +4,14 @@ import folium
 import pandas as pd 
 from sodapy import Socrata
 
+
 url="https://raw.githubusercontent.com/Loes75/Covid19_Col_Web/master/coordenadas_col.csv"
-client = Socrata("www.datos.gov.co", None)   
-results = client.get("gt2j-8ykr", limit=1000000)  #Limit of 1000000 rows
+#client = Socrata("www.datos.gov.co", None)  
+client = Socrata("www.datos.gov.co", "8ohqgp4u9puH40FbbytMWkjpv")
+results = client.get("gt2j-8ykr", limit=2000000)  #Limit of 1000000 rows
+
+
+
 df = pd.DataFrame.from_records(results)
 ###Cambio de las fechas a tipo datetime
 df['fecha_diagnostico']=pd.to_datetime(df['fecha_diagnostico'],errors='coerce')
@@ -33,7 +38,7 @@ mapa_info.drop_duplicates();
 map=folium.Map(location=[4.5709,-74.2973],zoom_start=5,tiles='Stamenterrain')
 
 for lat,long,value, name in zip(mapa_info['Latitud'],mapa_info['Longitud'],mapa_info['Casos'],mapa_info['departamento']):
-    folium.CircleMarker([lat,long],radius=value*0.01,popup=('<strong>State</strong>: '+str(name).capitalize()+'<br>''<strong>Total_Cases</strong>: ' + str(value)+ '<br>'),color='red',fill_color='red',fill_opacity=0.3).add_to(map)
+    folium.CircleMarker([lat,long],radius=value*0.003,popup=('<strong>State</strong>: '+str(name).capitalize()+'<br>''<strong>Total_Cases</strong>: ' + str(value)+ '<br>'),color='red',fill_color='red',fill_opacity=0.3).add_to(map)
     
 
 

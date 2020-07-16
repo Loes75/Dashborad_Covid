@@ -14,10 +14,13 @@ import pandas as pd
 import plotly.express as px
 from plotly.subplots import make_subplots
 from map_graph import results
+from sodapy import Socrata
+import sys
 
 
 from app import app,server
 
+client = Socrata("www.datos.gov.co", "8ohqgp4u9puH40FbbytMWkjpv")
 
 #Lectura de los datos
 df = pd.DataFrame.from_records(results)
@@ -111,29 +114,20 @@ app.layout=html.Div(id='General', style={'backgroundColor': colors['background']
     
     ])
     
-   
+class HaltCallback(Exception):
+    pass
 
- # html.Div(id='top',children=html.H1('Covid-19 Colombia',style= {'textAlign':'center', 'fontWeight': 'bold'})),
- #                        dcc.Dropdown(id='y',options=col_options,multi=False,value='Casos'),
-                        
- #                        html.Div(html.H3(id='informacion')),
- #                        html.Br(),
- #                        dcc.Graph(id='graph',figure={}),
-                        
-                        
- #                        html.Div(id='Mayor',children=[
-                               
- #                                html.Div(id='Izq',children=[dcc.Graph(id='graph2',figure=px.pie(df_estado,values='Cant',names=df_estado.index,hole=0.3,title='Estado de los contagiados'))]),
- #                                html.Div(id='Der',children=[dcc.Graph(id='graph3',figure=px.pie(df_atencion,values='Casos',names='atenci_n',hole=0.3,title='Atencion de los contagiados'))])
- #                                ]),
- #                        html.Iframe(id='map',srcDoc=open('mapa_casos.html').read(),width='100%',height='500')
-                           
+@app.server.errorhandler(HaltCallback)
+def handle_error(error):
+    print(error, file=sys.stderr)
+    return ('', 204)                          
 
 ####Llamada a la función de selección 
 @app.callback([Output(component_id='informacion',component_property='children'),
                Output(component_id='graph', component_property='figure')], 
               [Input(component_id='y', component_property='value')])
 def update_graph(option_slctd):
+    results = client.get("gt2j-8ykr", limit=1000000)  #Limit of 1000000 rows
     
     print(option_slctd)
 
