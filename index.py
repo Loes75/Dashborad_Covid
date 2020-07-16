@@ -22,7 +22,7 @@ from app import app,server
 
 client = Socrata("www.datos.gov.co", "8ohqgp4u9puH40FbbytMWkjpv")
 
-results = client.get("gt2j-8ykr", where= "fecha_reporte_web > '2020-06-01T00:00:00.000'", limit=100)
+results = client.get("gt2j-8ykr",select="id_de_caso, atenci_n, fecha_reporte_web, estado, ciudad_de_ubicaci_n, fecha_de_muerte ",limit=2000)
 #Lectura de los datos
 df = pd.DataFrame.from_records(results)
 
@@ -100,7 +100,7 @@ app.layout=html.Div(id='General', style={'backgroundColor': colors['background']
         html.Div(html.H3("A continuación se muetran las ciudades con más infectados y muertes"),style=style1),
         html.Div(id='Top',children=[dcc.Graph(id='top_graph',figure= fig4)]),
         html.Div(html.H3("A continuación se muestra un mapa con información sobre cuantos cuantos casos hay en cada departamento"),style=style1),
-        html.Div(id='mapa',children=[html.Iframe(id='map',srcDoc=open('mapa_casos.html').read(),width='70%',height='500px')])
+        html.Div(id='mapa',children=[html.Iframe(id='map',srcDoc=open('mapa_casos.html').read(),width='90%',height='600px')])
         
         
         
@@ -125,8 +125,8 @@ app.layout=html.Div(id='General', style={'backgroundColor': colors['background']
               [Input(component_id='y', component_property='value')])
 def update_graph(option_slctd):
     
-    results = client.get("gt2j-8ykr", limit=1000000)  #Limit of 1000000 rows
-        
+    results = client.get("gt2j-8ykr",select="id_de_caso, atenci_n, fecha_reporte_web, estado, ciudad_de_ubicaci_n, fecha_de_muerte ",limit=100000000)
+    
     info = "Datos actualizados"
     df = pd.DataFrame.from_records(results)
 
