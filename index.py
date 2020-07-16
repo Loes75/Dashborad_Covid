@@ -125,7 +125,7 @@ app.layout=html.Div(id='General', style={'backgroundColor': colors['background']
               [Input(component_id='y', component_property='value')])
 def update_graph(option_slctd):
     
-    results = client.get("gt2j-8ykr",select="id_de_caso, atenci_n, fecha_reporte_web, estado, ciudad_de_ubicaci_n, fecha_de_muerte ",limit=100000000)
+    results = client.get("gt2j-8ykr",limit=100000000)
     
     info = "Datos actualizados"
     df = pd.DataFrame.from_records(results)
