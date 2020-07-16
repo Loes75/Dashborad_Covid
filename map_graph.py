@@ -3,15 +3,16 @@
 import folium
 import pandas as pd 
 from sodapy import Socrata
+from index.py import results
 
 
 url="https://raw.githubusercontent.com/Loes75/Covid19_Col_Web/master/coordenadas_col.csv"
 #client = Socrata("www.datos.gov.co", None)  
-client = Socrata("www.datos.gov.co", "8ohqgp4u9puH40FbbytMWkjpv")
+""" client = Socrata("www.datos.gov.co", "8ohqgp4u9puH40FbbytMWkjpv")
 results = client.get("gt2j-8ykr", limit=2000000)  #Limit of 1000000 rows
 
 
-
+"""
 df = pd.DataFrame.from_records(results)
 ###Cambio de las fechas a tipo datetime
 df['fecha_diagnostico']=pd.to_datetime(df['fecha_diagnostico'],errors='coerce')
@@ -32,7 +33,7 @@ Col_coordinates['departamento']=Col_coordinates['departamento'].replace({'Chocó
 mapa_info=df.groupby('departamento')['id_de_caso'].count().to_frame().reset_index().rename({'id_de_caso':'Casos'}, axis='columns')
 df_merge=pd.merge(Col_coordinates,df,on='departamento',how='right')
 mapa_info=pd.merge(Col_coordinates,mapa_info,on='departamento')
-mapa_info.drop_duplicates();
+mapa_info.drop_duplicates()
 
 
 map=folium.Map(location=[4.5709,-74.2973],zoom_start=5,tiles='Stamenterrain')
