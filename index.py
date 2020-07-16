@@ -22,7 +22,7 @@ from app import app,server
 
 client = Socrata("www.datos.gov.co", "8ohqgp4u9puH40FbbytMWkjpv")
 
-results = client.get("gt2j-8ykr",select="id_de_caso, atenci_n, fecha_reporte_web, estado, ciudad_de_ubicaci_n, fecha_de_muerte ",limit=2000)
+results = client.get("gt2j-8ykr",limit=1000)
 #Lectura de los datos
 df = pd.DataFrame.from_records(results)
 
